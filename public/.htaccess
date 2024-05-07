@@ -224,7 +224,7 @@ AddType application/x-shockwave-flash       swf
     RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
     # https://brasstacksweb.com -> https://www.brasstacksweb.com
-    RewriteCond %{HTTP_HOST} ^brasstacksweb\.com$ [NC,OR]
+    RewriteCond %{HTTP_HOST} ^brasstacksweb\.com$ [NC]
     RewriteRule .* https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 </IfModule>
 
