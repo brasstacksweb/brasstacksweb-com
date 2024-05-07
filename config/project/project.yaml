@@ -1,16 +1,17 @@
-dateModified: 1715106922
+dateModified: 1715108382
 email:
   fromEmail: trevor@brasstacksweb.com
   fromName: 'Morganton Day School'
   transportType: craft\mail\transportadapters\Sendmail
 meta:
   __names__:
-    019d8137-088c-4f8f-9662-d26ddd7f2fb7: 'Morganton Day School' # Morganton Day School
+    019d8137-088c-4f8f-9662-d26ddd7f2fb7: 'Brass Tacks Web' # Brass Tacks Web
     812fd012-9cc4-4c3c-bf03-845a6340a1f5: 'Brass Tacks Web' # Brass Tacks Web
 system:
   edition: solo
   live: true
-  name: 'Morganton Day School'
+  name: 'Brass Tacks Web'
+  retryDuration: null
   schemaVersion: 5.0.0.20
   timeZone: America/Los_Angeles
 users:
