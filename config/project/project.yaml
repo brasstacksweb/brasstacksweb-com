@@ -1,4 +1,4 @@
-dateModified: 1715108543
+dateModified: 1715111966
 email:
   fromEmail: trevor@brasstacksweb.com
   fromName: 'Morganton Day School'
@@ -6,7 +6,7 @@ email:
   template: null
   transportSettings:
     messageStream: ''
-    token: 2671b085-23c6-48fd-8342-4d9fa9acad37
+    token: $POSTMARK_API_KEY
   transportType: craftcms\postmark\Adapter
 meta:
   __names__:

@@ -7,10 +7,52 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
 		<meta name="referrer" content="origin-when-cross-origin" />
 		<style>
+			:root {
+				--s: 8px;
+				--s-xs: calc(var(--s) * 2);
+				--s-sm: calc(var(--s) * 3);
+				--s-md: calc(var(--s) * 5);
+				--s-lg: calc(var(--s) * 7);
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				min-height: 100vh;
+				margin: 0;
+				padding: var(--s-sm);
+				font-family: system-ui;
+			}
+
+			body > footer {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin: auto 0 0;
+				padding: var(--s-sm);
+				text-align: center;
+			}
+
+			body > footer > p {
+				font-size: 0.75em;
+			}
 		</style>
 	</head>
 	<body class="ltr">
-		<h1>Brass Tacks Web</h1>
-		<h2>Your no-nonsense partner for the web.</h2>
+		<header>
+			<h1>Brass Tacks Web</h1>
+			<h2>Your no-nonsense partner for the web.</h2>
+		</header>
+		<footer>
+			<p>Copyright 2024</p>
+		</footer>
 	</body>
 </html>
