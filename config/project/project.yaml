@@ -1,4 +1,4 @@
-dateModified: 1715111966
+dateModified: 1731418532
 email:
   fromEmail: trevor@brasstacksweb.com
   fromName: 'Morganton Day School'
@@ -22,7 +22,7 @@ system:
   live: true
   name: 'Brass Tacks Web'
   retryDuration: null
-  schemaVersion: 5.0.0.20
+  schemaVersion: 5.3.0.2
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false
