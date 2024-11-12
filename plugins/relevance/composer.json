@@ -1,0 +1,48 @@
+{
+  "name": "brass-tacks-web/craft-relevance",
+  "description": "Find entries that are relevant to a given entry based on the entry content instead of tagging and categories.",
+  "type": "craft-plugin",
+  "license": "mit",
+  "support": {
+    "email": "hello@brasstacksweb.com",
+    "issues": "https://github.com/brasstacksweb/craft-relevance/issues?state=open",
+    "source": "https://github.com/brasstacksweb/craft-relevance",
+    "docs": "https://github.com/brasstacksweb/craft-relevance",
+    "rss": "https://github.com/brasstacksweb/craft-relevance/releases.atom"
+  },
+  "require": {
+    "php": ">=8.2",
+    "craftcms/cms": "^5.1.0"
+  },
+  "require-dev": {
+    "craftcms/ecs": "dev-main",
+    "craftcms/phpstan": "dev-main"
+  },
+  "autoload": {
+    "psr-4": {
+      "brasstacksweb\\craftrelevance\\": "src/"
+    }
+  },
+  "extra": {
+    "handle": "relevance",
+    "name": "Relevance",
+    "developer": "Brass Tacks Web",
+    "documentationUrl": "https://github.com/brasstacksweb/craft-relevance",
+    "class": "brasstacksweb\\craftrelevance\\Relevance"
+  },
+  "scripts": {
+    "check-cs": "ecs check --ansi",
+    "fix-cs": "ecs check --ansi --fix",
+    "phpstan": "phpstan --memory-limit=1G"
+  },
+  "config": {
+    "sort-packages": true,
+    "platform": {
+      "php": "8.2"
+    },
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true,
+      "craftcms/plugin-installer": true
+    }
+  }
+}
