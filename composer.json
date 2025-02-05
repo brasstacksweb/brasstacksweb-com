@@ -2,7 +2,7 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "craftcms/cms": "5.4.10.1",
+    "craftcms/cms": "5.6.5.1",
     "craftcms/postmark": "^3.1.0",
     "vlucas/phpdotenv": "^5.4.0"
   },
