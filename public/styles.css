@@ -1,0 +1,126 @@
+:root {
+	--s: 8px;
+	--s-xs: calc(var(--s) * 2);
+	--s-sm: calc(var(--s) * 3);
+	--s-md: calc(var(--s) * 5);
+	--s-lg: calc(var(--s) * 7);
+	--c-bg-md: yellow;
+	--c-fg-md: teal;
+	--c-fg-dk: maroon;
+	--a-sm: 0.3s ease-in-out;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+body {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	margin: 0;
+	padding: var(--s-sm);
+	background-color: var(--c-bg-md);
+	color: var(--c-fg-dk);
+	font-family: system-ui;
+
+	> header {
+		text-align: center;
+
+		> h1 {
+			font-size: clamp(3em, 8vw, 5em);
+		}
+
+		> h2 {
+			margin-top: var(--s-xs);
+		}
+
+		> p {
+			margin-top: var(--s-sm);
+		}
+	}
+
+	> main {
+		margin-top: var(--s-lg);
+		max-width: 600px;
+
+		> article > section {
+			> ul {
+				margin-top: var(--s-md);
+				list-style: none;
+				padding: 0;
+
+				> li {
+					&:not(:last-child) {
+						border-bottom: 1px solid var(--c-fg-md);
+						margin-bottom: var(--s-sm);
+						padding-bottom: var(--s-sm);
+					}
+
+					> article {
+						display: flex;
+						flex-wrap: wrap;
+						justify-content: space-between;
+						align-items: flex-start;
+
+						> h3 {
+							margin-right: var(--s-sm);
+							margin-bottom: var(--s-xs);
+						}
+
+						> a {
+							color: var(--c-fg-md);
+							transition: color var(--a-sm);
+
+							&:hover {
+								color: color-mix(in srgb, var(--c-fg-md), black 65%);
+							}
+						}
+
+						> p {
+							width: 100%;
+							line-height: 1.6;
+							margin-top: var(--s-xs);
+						}
+
+						> h4 {
+							width: 100%;
+							margin-top: var(--s-xs);
+						}
+
+						> ul {
+							width: 100%;
+							padding: var(--s-xs);
+							margin-top: var(--s-xs);
+
+							> li {
+								&:not(:first-child) {
+									margin-top: var(--s);
+								}
+
+								font-size: 0.88em;
+								line-height: 1.4;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	> footer {
+		margin-top: var(--s-lg);
+		padding-top: var(--s-xs);
+		color: var(--c-fg-md);
+		text-align: center;
+		border-top: 1px solid var(--c-fg-md);
+
+		> p {
+			font-size: 0.77em;
+		}
+	}
+}

@@ -1,3 +1,70 @@
+{% set projects = [
+	{
+		name: 'Morganton Day School Titan Link',
+		url: 'https://portal.morgantondayschool.com',
+		description: 'Communications portal for Morganton Day School. Enables teachers and staff to manage schoolwide activities, classroom updates, and parent reminders about upcoming events.',
+		features: [
+			'Reminder management system for scheduling and notifying parents about school events and important dates.',
+			'Classroom update tools for teachers to share assignments, announcements, and resources with parents.',
+			'User-friendly interface for easy navigation and access to important information.',
+		]
+	},
+	{
+		name: 'Bikepacking Basecamp',
+		url: 'https://bikepacking.com/basecamp/',
+		description: 'Resource hub for bikepackers, featuring gear reviews, route guides, and community forums to connect with fellow enthusiasts.',
+		features: [
+			'Message board for posting upcoming rideshare opportunities and connecting with other bikepackers.',
+			'Experts Q&A board for getting advice on gear, routes, and bikepacking techniques from experienced riders.',
+			'Co-op gear exchange platform for buying, selling, and trading bikepacking equipment within the community.',
+		]
+	},
+	{
+		name: 'West Kept Secret',
+		url: 'https://westkeptsecret.co',
+	description: 'Website for a premier botique fitness studio in Charlotte, NC, offering specialized classes and personal training services.',
+		features: [
+			'Class schedule management system for easy booking and tracking of fitness classes.',
+			'Personal training session booking and management for clients to schedule one-on-one sessions with trainers.',
+			'Membership management system for handling subscriptions, payments, and member benefits.',
+		]
+	},
+	{
+		name: 'Just Machined',
+		url: 'https://github.com/tplassman/damfab-mori-sh50-stockerchain-controller',
+		description: 'Touchscreen-based industrial pot controller for the Mori SH-50, using a LabJack T4 for hardware I/O.',
+		features: [
+			'Touchscreen UI with keypad and chain visualization',
+			'Pot instructions loaded from instructions/potXX.txt files',
+			'Manual and automatic (run-to-target) chain control',
+			'LabJack T4 hardware integration (with mock mode for development)',
+			'Global overlay disables UI when manual mode is inactive',
+			'Modern Python project structure with uv for package management',
+		],
+	},
+	{
+		name: 'Craft IP Blocker Plugin',
+		url: 'https://github.com/brasstacksweb/craft-ip-blocker',
+		description: 'IP address blocker for Craft CMS applications to bock traffic from malicious sources.',
+		features: [
+			'Block IP addresses via CMS managed conditions',
+			'Customizable block messages for different scenarios',
+			'Logging of blocked access attempts for review',
+		],
+	},
+	{
+		name: 'Craft Basic Auth Plugin',
+		url: 'https://github.com/brasstacksweb/craft-basic-auth',
+		description: 'A flexible and powerful Craft CMS plugin that adds HTTP Basic Authentication to your websites with intelligent rule-based configuration.',
+		features: [
+			'Flexible Rule System: Create authentication rules triggered by environment or domain patterns',
+			'Environment-Aware: Automatically detects current environment using CRAFT_ENVIRONMENT',
+			'Smart Protection: Define protected and excepted paths with wildcard pattern support',
+			'Secure Credentials: Password fields support Craft\'s environment variable syntax',
+		],
+	},
+] %}
+
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
@@ -6,64 +73,7 @@
 		<title>Brass Tacks Web</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
 		<meta name="referrer" content="origin-when-cross-origin" />
-		<style>
-			:root {
-				--s: 8px;
-				--s-xs: calc(var(--s) * 2);
-				--s-sm: calc(var(--s) * 3);
-				--s-md: calc(var(--s) * 5);
-				--s-lg: calc(var(--s) * 7);
-				--c-bg-lt: yellow;
-				--c-fg-dk: maroon;
-				--c-fg-md: darkslategray;
-			}
-
-			* {
-				box-sizing: border-box;
-				margin: 0;
-			}
-
-			body {
-				position: relative;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				min-height: 100vh;
-				margin: 0;
-				padding: var(--s-sm);
-				background-color: var(--c-bg-lt);
-				color: var(--c-fg-dk);
-				font-family: system-ui;
-			}
-
-			body > header > h1 {
-				font-size: 5em;
-			}
-
-			body > header > h2 {
-				margin-top: var(--s-xs);
-			}
-
-			body > header > p {
-				margin-top: var(--s-sm);
-			}
-
-			body > footer {
-				position: absolute;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				margin: auto 0 0;
-				padding: var(--s-sm);
-				color: var(--c-fg-md);
-				text-align: center;
-			}
-
-			body > footer > p {
-				font-size: 0.75em;
-			}
-		</style>
+		<link rel="stylesheet" href="/styles.css" />
 	</head>
 	<body class="ltr">
 		<header>
@@ -71,8 +81,40 @@
 			<h2>Your no-nonsense partner for the web.</h2>
 			<p>Email us about web develoment projects at <em>&lt;hello[at]brasstacksweb[dot]com&gt;</em>.</p>
 		</header>
+
+		<main>
+			<article>
+				<section>
+					<h2>Recent Work</h2>
+					<ul>
+						{% for p in projects %}
+							<li>
+								<article>
+									<h3>{{ p.name }}</h3>
+									<a
+										href="{{ p.url }}"
+										target="_blank"
+										rel="noopener"
+									>View Work</a>
+									<p>{{ p.description }}</p>
+									{% if p.features is not empty %}
+										<h4>Features:</h4>
+										<ul>
+											{% for f in p.features %}
+												<li>{{ f }}</li>
+											{% endfor %}
+										</ul>
+									{% endif %}
+								</article>
+							</li>
+						{% endfor %}
+					</ul>
+				</section>
+			</article>
+		</main>
+
 		<footer>
-			<p>Copyright 2024</p>
+			<p>Copyright {{ now|date('Y') }}</p>
 		</footer>
 	</body>
 </html>
